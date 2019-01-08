@@ -1,8 +1,7 @@
 package com.in28minutes.Springboot.web.springbootfirstwebapplication.controller;
 
-import java.net.URI;
-import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.validation.Valid;
 
@@ -10,25 +9,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.in28minutes.Springboot.web.springbootfirstwebapplication.repository.EmployeeRepository;
 import com.in28minutes.Springboot.web.springbootfirstwebapplication.service.Employee;
 import com.in28minutes.Springboot.web.springbootfirstwebapplication.service.EmployeeService;
-import com.in28minutes.Springboot.web.springbootfirstwebapplication.service.PaystubService;
-
-import ch.qos.logback.classic.Logger;
 
 @Controller
 public class EmployeeController
@@ -40,9 +32,9 @@ public class EmployeeController
 	private EmployeeRepository employeeRepository;
 	
 	private static final org.slf4j.Logger log = 
-			LoggerFactory.getLogger(EmployeeController.class); //Loggers
+			LoggerFactory.getLogger(EmployeeController.class); //Loggers from Logger Factory
 
-	//Initbinder to bind certain format to the relevant class
+	//Initbinder to bind certain format to the relevant class. It binds using Web data binder
 	@InitBinder
 	public void InitBinder(WebDataBinder dataBinder) {
 		//Date dd/MM/yyyy
